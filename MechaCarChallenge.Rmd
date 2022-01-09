@@ -49,6 +49,25 @@ lot_summary
 
 
 ```{r}
+# Use t.test() to determine if the PSI across all manufacturing lots is statistically different from the pop mean of 1500 lbs per sq inch
+t.test(coil_df$PSI, mu=1500)
+```
 
+```{r}
+# Use t.test() to determine if the PSI for each manufacturing lot is statistically different from the pop mean of 1500 lbs per sq inch
+
+# Lot1
+t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == "Lot1"), mu=1500)
+```
+
+
+```{r}
+# Lot2
+t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == "Lot2"), mu=1500)
+```
+
+```{r}
+# Lot3
+t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == "Lot3"), mu=1500)
 ```
 

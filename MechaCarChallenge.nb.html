@@ -309,11 +309,95 @@ lot_summary</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVc2UgdC50ZXN0KCkgdG8gZGV0ZXJtaW5lIGlmIHRoZSBQU0kgYWNyb3NzIGFsbCBtYW51ZmFjdHVyaW5nIGxvdHMgaXMgc3RhdGlzdGljYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcG9wIG1lYW4gb2YgMTUwMCBsYnMgcGVyIHNxIGluY2hcbnQudGVzdChjb2lsX2RmJFBTSSwgbXU9MTUwMClcblxuYGBgIn0= -->
+<pre class="r"><code># Use t.test() to determine if the PSI across all manufacturing lots is statistically different from the pop mean of 1500 lbs per sq inch
+t.test(coil_df$PSI, mu=1500)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<pre><code>
+    One Sample t-test
+
+data:  coil_df$PSI
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QxXG50LnRlc3QoZGF0YT1jb2lsX2RmLCB4PWNvaWxfZGYkUFNJLCBzdWJzZXQ9KE1hbnVmYWN0dXJpbmdfTG90ID09IFwiTG90MVwiKSwgbXU9MTUwMClcblxuYGBgIn0= -->
+<pre class="r"><code># Lot1
+t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == &quot;Lot1&quot;), mu=1500)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<pre><code>
+    One Sample t-test
+
+data:  coil_df$PSI
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QyXG50LnRlc3QoZGF0YT1jb2lsX2RmLCB4PWNvaWxfZGYkUFNJLCBzdWJzZXQ9KE1hbnVmYWN0dXJpbmdfTG90ID09IFwiTG90MlwiKSwgbXU9MTUwMClcblxuYGBgIn0= -->
+<pre class="r"><code># Lot2
+t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == &quot;Lot2&quot;), mu=1500)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<pre><code>
+    One Sample t-test
+
+data:  coil_df$PSI
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QzXG50LnRlc3QoZGF0YT1jb2lsX2RmLCB4PWNvaWxfZGYkUFNJLCBzdWJzZXQ9KE1hbnVmYWN0dXJpbmdfTG90ID09IFwiTG90M1wiKSwgbXU9MTUwMClcblxuYGBgIn0= -->
+<pre class="r"><code># Lot3
+t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == &quot;Lot3&quot;), mu=1500)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<pre><code>
+    One Sample t-test
+
+data:  coil_df$PSI
+t = -1.8931, df = 149, p-value = 0.06028
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1497.507 1500.053
+sample estimates:
+mean of x 
+  1498.78 </code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiMgSW1wb3J0IGRlcGVuZGVuY2llcw0KbGlicmFyeShkcGx5cikNCmBgYA0KDQoNCmBgYHtyfQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIE1lY2hhQ2FyX21wZy5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KbXBnX2RmIDwtIHJlYWQuY3N2KCJSZXNvdXJjZXMvTWVjaGFDYXJfbXBnLmNzdiIpDQpgYGANCg0KDQpgYGB7cn0NCiMgUGVyZm9ybSBsaW5lYXIgcmVncmVzc2lvbiBvbiBhbGwgc2l4IHZhcmlhYmxlcyB3aXRoIHRoZSBkZiBhcyB0aGUgZGF0YSBwYXJhbWV0ZXINCmxtKG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YT1tcGdfZGYpDQpgYGANCmBgYHtyfQ0KIyBVc2UgdGhlIFN1bW1hcnkgZnVuY3Rpb24gdG8gZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZikpDQpgYGANCmBgYHtyfQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIFN1c3BlbnNpb25fQ29pbC5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KY29pbF9kZiA8LSByZWFkLmNzdigiUmVzb3VyY2VzL1N1c3BlbnNpb25fQ29pbC5jc3YiKQ0KYGBgDQoNCmBgYHtyfQ0KIyBDcmVhdGUgYSB0b3RhbF9zdW1hcnJ5IGRhdGFmcmFtZSB0aGF0IGluY2x1ZGVzIG1lYW4sIG1lZGlhbiwgdmFyaWFuY2UsIHN0YW5kYXJkIGRldmlhdGlvbiBvZiBzdXNwZW5zaW9uIGNvaWwncyBQU0kNCnRvdGFsX3N1bW1hcnkgPC0gY29pbF9kZiAlPiUgc3VtbWFyaXplKE1lYW49bWVhbihQU0kpLCBNZWRpYW49bWVkaWFuKFBTSSksIFZhcmlhbmNlPXZhcihQU0kpLCBTRD1zZChQU0kpKQ0KDQp0b3RhbF9zdW1tYXJ5DQoNCmBgYA0KDQoNCmBgYHtyfQ0KIyBDcmVhdGUgYSBsb3Rfc3VtbWFyeSBkZiB0aGF0IGdyb3VwcyBlYWNoIG1hbnVmYWN0dXJpbmcgbG90IGJ5IHRoZSBtZWFuLCBtZWRpYW4sIHZhciwgYW5kIHNkIG9mIHRoZSBQU0kNCmxvdF9zdW1tYXJ5IDwtDQogIGNvaWxfZGYgJT4lIA0KICAgIGdyb3VwX2J5KE1hbnVmYWN0dXJpbmdfTG90KSAlPiUNCiAgICAgIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSkNCg0KbG90X3N1bW1hcnkNCmBgYA0KDQoNCmBgYHtyfQ0KDQpgYGANCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiMgSW1wb3J0IGRlcGVuZGVuY2llcw0KbGlicmFyeShkcGx5cikNCmBgYA0KDQoNCmBgYHtyfQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIE1lY2hhQ2FyX21wZy5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KbXBnX2RmIDwtIHJlYWQuY3N2KCJSZXNvdXJjZXMvTWVjaGFDYXJfbXBnLmNzdiIpDQpgYGANCg0KDQpgYGB7cn0NCiMgUGVyZm9ybSBsaW5lYXIgcmVncmVzc2lvbiBvbiBhbGwgc2l4IHZhcmlhYmxlcyB3aXRoIHRoZSBkZiBhcyB0aGUgZGF0YSBwYXJhbWV0ZXINCmxtKG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YT1tcGdfZGYpDQpgYGANCmBgYHtyfQ0KIyBVc2UgdGhlIFN1bW1hcnkgZnVuY3Rpb24gdG8gZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZikpDQpgYGANCmBgYHtyfQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIFN1c3BlbnNpb25fQ29pbC5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KY29pbF9kZiA8LSByZWFkLmNzdigiUmVzb3VyY2VzL1N1c3BlbnNpb25fQ29pbC5jc3YiKQ0KYGBgDQoNCmBgYHtyfQ0KIyBDcmVhdGUgYSB0b3RhbF9zdW1hcnJ5IGRhdGFmcmFtZSB0aGF0IGluY2x1ZGVzIG1lYW4sIG1lZGlhbiwgdmFyaWFuY2UsIHN0YW5kYXJkIGRldmlhdGlvbiBvZiBzdXNwZW5zaW9uIGNvaWwncyBQU0kNCnRvdGFsX3N1bW1hcnkgPC0gY29pbF9kZiAlPiUgc3VtbWFyaXplKE1lYW49bWVhbihQU0kpLCBNZWRpYW49bWVkaWFuKFBTSSksIFZhcmlhbmNlPXZhcihQU0kpLCBTRD1zZChQU0kpKQ0KDQp0b3RhbF9zdW1tYXJ5DQoNCmBgYA0KDQoNCmBgYHtyfQ0KIyBDcmVhdGUgYSBsb3Rfc3VtbWFyeSBkZiB0aGF0IGdyb3VwcyBlYWNoIG1hbnVmYWN0dXJpbmcgbG90IGJ5IHRoZSBtZWFuLCBtZWRpYW4sIHZhciwgYW5kIHNkIG9mIHRoZSBQU0kNCmxvdF9zdW1tYXJ5IDwtDQogIGNvaWxfZGYgJT4lIA0KICAgIGdyb3VwX2J5KE1hbnVmYWN0dXJpbmdfTG90KSAlPiUNCiAgICAgIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSkNCg0KbG90X3N1bW1hcnkNCmBgYA0KDQoNCmBgYHtyfQ0KIyBVc2UgdC50ZXN0KCkgdG8gZGV0ZXJtaW5lIGlmIHRoZSBQU0kgYWNyb3NzIGFsbCBtYW51ZmFjdHVyaW5nIGxvdHMgaXMgc3RhdGlzdGljYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcG9wIG1lYW4gb2YgMTUwMCBsYnMgcGVyIHNxIGluY2gNCnQudGVzdChjb2lsX2RmJFBTSSwgbXU9MTUwMCkNCmBgYA0KDQpgYGB7cn0NCiMgVXNlIHQudGVzdCgpIHRvIGRldGVybWluZSBpZiB0aGUgUFNJIGZvciBlYWNoIG1hbnVmYWN0dXJpbmcgbG90IGlzIHN0YXRpc3RpY2FsbHkgZGlmZmVyZW50IGZyb20gdGhlIHBvcCBtZWFuIG9mIDE1MDAgbGJzIHBlciBzcSBpbmNoDQoNCiMgTG90MQ0KdC50ZXN0KGRhdGE9Y29pbF9kZiwgeD1jb2lsX2RmJFBTSSwgc3Vic2V0PShNYW51ZmFjdHVyaW5nX0xvdCA9PSAiTG90MSIpLCBtdT0xNTAwKQ0KYGBgDQoNCg0KYGBge3J9DQojIExvdDINCnQudGVzdChkYXRhPWNvaWxfZGYsIHg9Y29pbF9kZiRQU0ksIHN1YnNldD0oTWFudWZhY3R1cmluZ19Mb3QgPT0gIkxvdDIiKSwgbXU9MTUwMCkNCmBgYA0KDQpgYGB7cn0NCiMgTG90Mw0KdC50ZXN0KGRhdGE9Y29pbF9kZiwgeD1jb2lsX2RmJFBTSSwgc3Vic2V0PShNYW51ZmFjdHVyaW5nX0xvdCA9PSAiTG90MyIpLCBtdT0xNTAwKQ0KYGBgDQoNCg==</div>
 
 
 
