@@ -214,187 +214,44 @@ pre code {
 </div>
 
 
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBQZXJmb3JtIGxpbmVhciByZWdyZXNzaW9uIG9uIGFsbCBzaXggdmFyaWFibGVzIHdpdGggdGhlIGRmIGFzIHRoZSBkYXRhIHBhcmFtZXRlclxubG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZilcblxuYGBgIn0= -->
-<pre class="r"><code># Perform linear regression on all six variables with the df as the data parameter
-lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mpg_df)
+<pre class="{r}"><code># Import dependencies
+library(dplyr)</code></pre>
+<pre class="{r}"><code>## Deliverable 1
+# Import and read in the MechaCar_mpg.csv file as a dataframe
+mpg_df &lt;- read.csv(&quot;Resources/MechaCar_mpg.csv&quot;)</code></pre>
+<pre class="{r}"><code># Perform linear regression on all six variables with the df as the data parameter
+lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mpg_df)</code></pre>
+<pre class="{r}"><code># Use the Summary function to determine the p-value and the r-squared value for the linear regression model
+summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mpg_df))</code></pre>
+<pre class="{r}"><code>## Delieverable 2
+# Import and read in the Suspension_Coil.csv file as a dataframe
+coil_df &lt;- read.csv(&quot;Resources/Suspension_Coil.csv&quot;)</code></pre>
+<pre class="{r}"><code># Create a total_sumarry dataframe that includes mean, median, variance, standard deviation of suspension coil&#39;s PSI
+total_summary &lt;- coil_df %&gt;% summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
+
+total_summary
 </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgXG4gICAgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YSA9IG1wZ19kZilcblxuQ29lZmZpY2llbnRzOlxuICAgICAoSW50ZXJjZXB0KSAgICB2ZWhpY2xlX2xlbmd0aCAgICB2ZWhpY2xlX3dlaWdodCAgICAgc3BvaWxlcl9hbmdsZSAgZ3JvdW5kX2NsZWFyYW5jZSAgICAgICAgICAgICAgIEFXRCAgXG4gICAgICAtMS4wNDBlKzAyICAgICAgICAgNi4yNjdlKzAwICAgICAgICAgMS4yNDVlLTAzICAgICAgICAgNi44NzdlLTAyICAgICAgICAgMy41NDZlKzAwICAgICAgICAtMy40MTFlKzAwICBcbiJ9 -->
-<pre><code>
-Call:
-lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
-    ground_clearance + AWD, data = mpg_df)
-
-Coefficients:
-     (Intercept)    vehicle_length    vehicle_weight     spoiler_angle  ground_clearance               AWD  
-      -1.040e+02         6.267e+00         1.245e-03         6.877e-02         3.546e+00        -3.411e+00  </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVc2UgdGhlIFN1bW1hcnkgZnVuY3Rpb24gdG8gZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWxcbnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZikpXG5cbmBgYCJ9 -->
-<pre class="r"><code># Use the Summary function to determine the p-value and the r-squared value for the linear regression model
-summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD, data=mpg_df))
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5DYWxsOlxubG0oZm9ybXVsYSA9IG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgXG4gICAgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YSA9IG1wZ19kZilcblxuUmVzaWR1YWxzOlxuICAgICBNaW4gICAgICAgMVEgICBNZWRpYW4gICAgICAgM1EgICAgICBNYXggXG4tMTkuNDcwMSAgLTQuNDk5NCAgLTAuMDY5MiAgIDUuNDQzMyAgMTguNTg0OSBcblxuQ29lZmZpY2llbnRzOlxuICAgICAgICAgICAgICAgICAgIEVzdGltYXRlIFN0ZC4gRXJyb3IgdCB2YWx1ZSBQcig+fHR8KSAgICBcbihJbnRlcmNlcHQpICAgICAgLTEuMDQwZSswMiAgMS41ODVlKzAxICAtNi41NTkgNS4wOGUtMDggKioqXG52ZWhpY2xlX2xlbmd0aCAgICA2LjI2N2UrMDAgIDYuNTUzZS0wMSAgIDkuNTYzIDIuNjBlLTEyICoqKlxudmVoaWNsZV93ZWlnaHQgICAgMS4yNDVlLTAzICA2Ljg5MGUtMDQgICAxLjgwNyAgIDAuMDc3NiAuICBcbnNwb2lsZXJfYW5nbGUgICAgIDYuODc3ZS0wMiAgNi42NTNlLTAyICAgMS4wMzQgICAwLjMwNjkgICAgXG5ncm91bmRfY2xlYXJhbmNlICAzLjU0NmUrMDAgIDUuNDEyZS0wMSAgIDYuNTUxIDUuMjFlLTA4ICoqKlxuQVdEICAgICAgICAgICAgICAtMy40MTFlKzAwICAyLjUzNWUrMDAgIC0xLjM0NiAgIDAuMTg1MiAgICBcbi0tLVxuU2lnbmlmLiBjb2RlczogIDAg4oCYKioq4oCZIDAuMDAxIOKAmCoq4oCZIDAuMDEg4oCYKuKAmSAwLjA1IOKAmC7igJkgMC4xIOKAmCDigJkgMVxuXG5SZXNpZHVhbCBzdGFuZGFyZCBlcnJvcjogOC43NzQgb24gNDQgZGVncmVlcyBvZiBmcmVlZG9tXG5NdWx0aXBsZSBSLXNxdWFyZWQ6ICAwLjcxNDksXHRBZGp1c3RlZCBSLXNxdWFyZWQ6ICAwLjY4MjUgXG5GLXN0YXRpc3RpYzogMjIuMDcgb24gNSBhbmQgNDQgREYsICBwLXZhbHVlOiA1LjM1ZS0xMVxuIn0= -->
-<pre><code>
-Call:
-lm(formula = mpg ~ vehicle_length + vehicle_weight + spoiler_angle + 
-    ground_clearance + AWD, data = mpg_df)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--19.4701  -4.4994  -0.0692   5.4433  18.5849 
-
-Coefficients:
-                   Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)      -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
-vehicle_length    6.267e+00  6.553e-01   9.563 2.60e-12 ***
-vehicle_weight    1.245e-03  6.890e-04   1.807   0.0776 .  
-spoiler_angle     6.877e-02  6.653e-02   1.034   0.3069    
-ground_clearance  3.546e+00  5.412e-01   6.551 5.21e-08 ***
-AWD              -3.411e+00  2.535e+00  -1.346   0.1852    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 8.774 on 44 degrees of freedom
-Multiple R-squared:  0.7149,    Adjusted R-squared:  0.6825 
-F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MTUwLCJuY29sIjozLCJzdW1tYXJ5Ijp7IkRlc2NyaXB0aW9uIjpbImRmIFsxNTAgeCAzXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUJ1MVkyNHFqUlJEK0p5ZVp3SHJBNTlpaHU2djZVTmZ1ellMQ29oRDJUbUkydXpzWWsyVW1nMTc2RlBNVVh2a0lnaUNJZ3F5NDQyU3lNNnZlK1E2cjlXZjYvL3RMd0R2M0xvR2lxN3E3VGw5VmRVSSt2dmVRaGcrSFZWVjFxOTVCcCtyMmxhMEdIenl3enJ1cTZuVlVPcWg2MVdHOWZxVzMzdDljcmFwM2xjN3p3V0RFSnZrRVVqQ3hsY2d5VTViNm8yQU10MEkweHJUM2JDVG1vaFVOUzN0UkRLTjU0ZGdlY1VpdWFIa2JpbWRuRWhVYk5vWVNSaFRyeXoxMmlVb2NUTFpFeFluSXdzMFFwVWdoU1ltWW5mVk5KTDJSczhXWkdvUVEyVXNKeWd1WE9OZ1RGMS9XZWx1Z2NqWVVCSnd6RGl5S3hCS3c4MVlLT29rcFFXYk9TUnNoQytRY1dHeEJ5bENFTUFTd0p4YUJrcGtZaXhHMjFnUW9JSEdKMGFsaXNja0tmMEpRQVdKdGxqWmtiUmRuMEVGTW1HaU1BQUtaVnRKK0NhYVV5VVptQUZJZ09hSVFzSHNTQm1rSXVvS3NoWkJaSElTc3BVRXNKVkNBNUR6MmoxWUtRSWxNRHJJek1hQy9XSHBMdThsdDZVRkRXWXB3azMyQ3FOV2ZLMzJZRWtCRTVLQ1FxY3l2b3VlMzZoRlNhVkhyakdkSTNNTHdXVGJROUJJY1lHa3BOTjU2STNFUWIvVE9ROVlzSUNXL1ZjWkVnSWhoQzVoSEQ3aHV2ei9NSG5IVjhZRHBEb1RZUlFQZFlHMHdrRGdMbHdseEFyMU5MaElPc1Q0NzJFUVcyaTA0YUdEU3lTcnBhVXVsZ3JvK0JEQUZYZ3hXcDMyZXRJcEdJRzloY0syWlFnVmNGQmZhQ2lUQ09SSUhZWGdUSUF4S0FXNUdRMUNQVUVEbzE4WDNyUkFqdEl3K1QxaWJyVFBXSVlZMzN3ZUNpVXNtUVRaaUNUclpHZnlxMEplZ1NDWUJKQlFEOXF0MmJ5bWk5MkRFK3VpaDJqcHUwQmZCeWxhWFNJQnFVSVM4dzlackZXSHlrejRFT004NHBjRXk1aDFnMXExWW1BRlN2TXAzVEJTMFFRNXhOWERHd1RBODZOSERjeWhKNExFeStwTEJvMkFGV2tFaVNOWVlTRWQ3WHI5MnQzOFU5RDVjTE8yZTMvTnZnSGQ3ZnMrL0FaNzIvSjcvMy9pcXVsUFYzNGRWZjZWMEJiVE9kSlhQMW5CMkNmdk4zc3NzWC82SDNpWElxMHd2UVhlOTQvOEs5dERlYXNmM0dtaTE0Nk0rZjdYanErWi96K3R2U2hjNXRzdDg1d2J5dzF6V0VPY3EyMzJWejI3eWVxMzBJcTgzZWNWOFZ0bGZZK2VQdkw3SU1XRmUxL25zSXZQTjJ1RDRQZVJhNi8rUTdkWjNudC91RHdhNmZnZjUvWjExcmtHdnNmZU4wcmVRNzE5S1B5cjlxdlJManU4bnBUOGh6cCt6L2tXbTV4blQ2K0puNjkrWi9uejh4ZlMwdXYwUjFzMmJoNlBwMCtQSmJIci9YdDU0NzZQeC9PenhlTEk4T3ptZVAvbFUrelFmZEI5OGNuL0g0dUhKNHN1anhtcmR5cDJ2cTgzbmZOZjFaRFkrYlZ3M204Tkg0K1g0NlBHSjZxdjBla2ZscmNXejVmRmlya3FkK2grbC9vN3l3Y25PeGp0bjh6cVNSM2NuVDgvbW45LzF0WVBOOGUzblR1YlBnZS9ldXV6OGswMzFzNm5CZFA3a2VENXRZcCtOUDV2T3N2QzJacnhKK09pWnd0TkFNOVRkMDZQbFlqbHU3ZzBuaTFtenM4bXRldjB2L2lQOHBVa1RBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["VehicleID"],"name":[1],"type":["chr"],"align":["left"]},{"label":["Manufacturing_Lot"],"name":[2],"type":["chr"],"align":["left"]},{"label":["PSI"],"name":[3],"type":["int"],"align":["right"]}],"data":[{"1":"V40858","2":"Lot1","3":"1499"},{"1":"V40607","2":"Lot1","3":"1500"},{"1":"V31443","2":"Lot1","3":"1500"},{"1":"V6004","2":"Lot1","3":"1500"},{"1":"V7000","2":"Lot1","3":"1501"},{"1":"V17344","2":"Lot1","3":"1501"},{"1":"V37049","2":"Lot1","3":"1500"},{"1":"V9048","2":"Lot1","3":"1499"},{"1":"V40947","2":"Lot1","3":"1501"},{"1":"V4682","2":"Lot1","3":"1500"},{"1":"V35167","2":"Lot1","3":"1500"},{"1":"V20839","2":"Lot1","3":"1498"},{"1":"V1763","2":"Lot1","3":"1500"},{"1":"V7915","2":"Lot1","3":"1499"},{"1":"V24283","2":"Lot1","3":"1500"},{"1":"V14310","2":"Lot1","3":"1500"},{"1":"V48331","2":"Lot1","3":"1502"},{"1":"V24679","2":"Lot1","3":"1499"},{"1":"V26894","2":"Lot1","3":"1498"},{"1":"V42152","2":"Lot1","3":"1501"},{"1":"V213","2":"Lot1","3":"1500"},{"1":"V4312","2":"Lot1","3":"1499"},{"1":"V34599","2":"Lot1","3":"1501"},{"1":"V5945","2":"Lot1","3":"1500"},{"1":"V45341","2":"Lot1","3":"1498"},{"1":"V11514","2":"Lot1","3":"1499"},{"1":"V2168","2":"Lot1","3":"1501"},{"1":"V22022","2":"Lot1","3":"1499"},{"1":"V39970","2":"Lot1","3":"1499"},{"1":"V25197","2":"Lot1","3":"1502"},{"1":"V8438","2":"Lot1","3":"1500"},{"1":"V14229","2":"Lot1","3":"1502"},{"1":"V493","2":"Lot1","3":"1501"},{"1":"V16491","2":"Lot1","3":"1500"},{"1":"V1037","2":"Lot1","3":"1500"},{"1":"V11948","2":"Lot1","3":"1500"},{"1":"V34990","2":"Lot1","3":"1500"},{"1":"V10773","2":"Lot1","3":"1501"},{"1":"V41106","2":"Lot1","3":"1500"},{"1":"V37342","2":"Lot1","3":"1501"},{"1":"V23497","2":"Lot1","3":"1500"},{"1":"V47918","2":"Lot1","3":"1499"},{"1":"V24631","2":"Lot1","3":"1499"},{"1":"V44338","2":"Lot1","3":"1500"},{"1":"V6203","2":"Lot1","3":"1499"},{"1":"V41780","2":"Lot1","3":"1500"},{"1":"V25772","2":"Lot1","3":"1501"},{"1":"V33072","2":"Lot1","3":"1501"},{"1":"V9609","2":"Lot1","3":"1501"},{"1":"V17444","2":"Lot1","3":"1499"},{"1":"V2937","2":"Lot2","3":"1499"},{"1":"V33662","2":"Lot2","3":"1501"},{"1":"V35897","2":"Lot2","3":"1499"},{"1":"V40383","2":"Lot2","3":"1500"},{"1":"V31118","2":"Lot2","3":"1505"},{"1":"V49231","2":"Lot2","3":"1499"},{"1":"V16893","2":"Lot2","3":"1502"},{"1":"V19636","2":"Lot2","3":"1500"},{"1":"V24531","2":"Lot2","3":"1499"},{"1":"V29702","2":"Lot2","3":"1497"},{"1":"V27432","2":"Lot2","3":"1499"},{"1":"V41076","2":"Lot2","3":"1494"},{"1":"V31174","2":"Lot2","3":"1496"},{"1":"V21322","2":"Lot2","3":"1498"},{"1":"V27412","2":"Lot2","3":"1498"},{"1":"V13774","2":"Lot2","3":"1502"},{"1":"V45883","2":"Lot2","3":"1504"},{"1":"V29723","2":"Lot2","3":"1498"},{"1":"V8872","2":"Lot2","3":"1500"},{"1":"V3320","2":"Lot2","3":"1498"},{"1":"V18858","2":"Lot2","3":"1501"},{"1":"V9531","2":"Lot2","3":"1500"},{"1":"V44685","2":"Lot2","3":"1501"},{"1":"V12054","2":"Lot2","3":"1502"},{"1":"V16182","2":"Lot2","3":"1501"},{"1":"V14013","2":"Lot2","3":"1499"},{"1":"V9627","2":"Lot2","3":"1505"},{"1":"V41360","2":"Lot2","3":"1505"},{"1":"V924","2":"Lot2","3":"1500"},{"1":"V47525","2":"Lot2","3":"1504"},{"1":"V31495","2":"Lot2","3":"1500"},{"1":"V38509","2":"Lot2","3":"1503"},{"1":"V17834","2":"Lot2","3":"1495"},{"1":"V20413","2":"Lot2","3":"1503"},{"1":"V17502","2":"Lot2","3":"1504"},{"1":"V40607","2":"Lot2","3":"1503"},{"1":"V44576","2":"Lot2","3":"1500"},{"1":"V35190","2":"Lot2","3":"1500"},{"1":"V46374","2":"Lot2","3":"1500"},{"1":"V47062","2":"Lot2","3":"1499"},{"1":"V11605","2":"Lot2","3":"1496"},{"1":"V14941","2":"Lot2","3":"1502"},{"1":"V2942","2":"Lot2","3":"1501"},{"1":"V32735","2":"Lot2","3":"1506"},{"1":"V45208","2":"Lot2","3":"1501"},{"1":"V40317","2":"Lot2","3":"1495"},{"1":"V36280","2":"Lot2","3":"1497"},{"1":"V31949","2":"Lot2","3":"1500"},{"1":"V49281","2":"Lot2","3":"1499"},{"1":"V34138","2":"Lot2","3":"1500"},{"1":"V5908","2":"Lot3","3":"1503"},{"1":"V9510","2":"Lot3","3":"1501"},{"1":"V3092","2":"Lot3","3":"1496"},{"1":"V49408","2":"Lot3","3":"1503"},{"1":"V35127","2":"Lot3","3":"1496"},{"1":"V27926","2":"Lot3","3":"1503"},{"1":"V830","2":"Lot3","3":"1498"},{"1":"V25929","2":"Lot3","3":"1499"},{"1":"V45061","2":"Lot3","3":"1477"},{"1":"V33860","2":"Lot3","3":"1499"},{"1":"V27039","2":"Lot3","3":"1501"},{"1":"V16942","2":"Lot3","3":"1495"},{"1":"V1405","2":"Lot3","3":"1480"},{"1":"V7785","2":"Lot3","3":"1502"},{"1":"V39902","2":"Lot3","3":"1503"},{"1":"V47785","2":"Lot3","3":"1491"},{"1":"V42574","2":"Lot3","3":"1501"},{"1":"V35633","2":"Lot3","3":"1542"},{"1":"V38088","2":"Lot3","3":"1474"},{"1":"V39133","2":"Lot3","3":"1498"},{"1":"V8204","2":"Lot3","3":"1498"},{"1":"V37577","2":"Lot3","3":"1515"},{"1":"V30892","2":"Lot3","3":"1499"},{"1":"V37654","2":"Lot3","3":"1503"},{"1":"V12051","2":"Lot3","3":"1501"},{"1":"V5504","2":"Lot3","3":"1495"},{"1":"V15755","2":"Lot3","3":"1498"},{"1":"V13224","2":"Lot3","3":"1499"},{"1":"V46194","2":"Lot3","3":"1452"},{"1":"V47096","2":"Lot3","3":"1458"},{"1":"V9537","2":"Lot3","3":"1501"},{"1":"V7763","2":"Lot3","3":"1500"},{"1":"V41771","2":"Lot3","3":"1508"},{"1":"V28453","2":"Lot3","3":"1483"},{"1":"V21383","2":"Lot3","3":"1492"},{"1":"V26143","2":"Lot3","3":"1489"},{"1":"V38622","2":"Lot3","3":"1497"},{"1":"V19109","2":"Lot3","3":"1485"},{"1":"V32572","2":"Lot3","3":"1507"},{"1":"V793","2":"Lot3","3":"1500"},{"1":"V26325","2":"Lot3","3":"1499"},{"1":"V42093","2":"Lot3","3":"1486"},{"1":"V46047","2":"Lot3","3":"1498"},{"1":"V17544","2":"Lot3","3":"1496"},{"1":"V9896","2":"Lot3","3":"1496"},{"1":"V20689","2":"Lot3","3":"1491"},{"1":"V18191","2":"Lot3","3":"1494"},{"1":"V39791","2":"Lot3","3":"1503"},{"1":"V10053","2":"Lot3","3":"1499"},{"1":"V45267","2":"Lot3","3":"1503"}],"options":{"columns":{"min":{},"max":[10],"total":[3]},"rows":{"min":[10],"max":[10],"total":[150]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibnJvdyI6MSwibmNvbCI6NCwic3VtbWFyeSI6eyJEZXNjcmlwdGlvbiI6WyJkZiBbMSB4IDRdIl19fSwicmRmIjoiSDRzSUFBQUFBQUFBQmd0eWlURG1pdUJpWUdCZ1ptQmhaR0pnWmdVeUdkaWNBd3lOVEkwWUdGaVlnRHhHQmhZR1RoQmRBVlFsREdTd0FERWZTTUJoZXJiY2pzRFhyUWgrQVFNVVFQaitxcFBkL3FuOGhQUGxKL0hzOTFOVlJqT1lOUzh4TjdVWXlCQUFHdzRSWlBGTlRjeURzdGw4VTFNeTRUeU9zTVFpSUM4NUZjcG5DblpCTTVDektMOWNEMllvTDFnQ2pGRnRUYzVKTEliWkNoUGtTa2tzU2RSTEt3THFCZkwrb1dsaHp5OG95Y3pQQTJwaUFvVURLNXBteGlJMEFZSFNQSkFyVW5TVE0wcnpzbldOREVBMlFKM0RnT28wT0pzRllpZlRmNmhackxBd1NNMUx6OHlEK1prMUp6RXBOUWZLNFFONkYreGJ2WUtpekx3U21GZUFvc1Y2SmZrbGlUQjFYTW41T1RBUnNPY1kvZ0VBM2Y2bnZRQUNBQUE9In0= -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":["Mean"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Median"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Variance"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["SD"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1498.78","2":"1500","3":"62.29356","4":"7.892627"}],"options":{"columns":{"min":{},"max":[10],"total":[4]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBDcmVhdGUgYSBsb3Rfc3VtbWFyeSBkZiB0aGF0IGdyb3VwcyBlYWNoIG1hbnVmYWN0dXJpbmcgbG90IGJ5IHRoZSBtZWFuLCBtZWRpYW4sIHZhciwgYW5kIHNkIG9mIHRoZSBQU0lcbmxvdF9zdW1tYXJ5IDwtXG4gIGNvaWxfZGYgJT4lIFxuICAgIGdyb3VwX2J5KE1hbnVmYWN0dXJpbmdfTG90KSAlPiVcbiAgICAgIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSlcblxubG90X3N1bW1hcnlcbmBgYCJ9 -->
-<pre class="r"><code># Create a lot_summary df that groups each manufacturing lot by the mean, median, var, and sd of the PSI
+<pre class="{r}"><code># Create a lot_summary df that groups each manufacturing lot by the mean, median, var, and sd of the PSI
 lot_summary &lt;-
   coil_df %&gt;% 
     group_by(Manufacturing_Lot) %&gt;%
       summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI))
 
 lot_summary</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgRGVsaXZlcmFibGUgM1xuIyBVc2UgdC50ZXN0KCkgdG8gZGV0ZXJtaW5lIGlmIHRoZSBQU0kgYWNyb3NzIGFsbCBtYW51ZmFjdHVyaW5nIGxvdHMgaXMgc3RhdGlzdGljYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcG9wIG1lYW4gb2YgMTUwMCBsYnMgcGVyIHNxIGluY2hcbnQudGVzdChjb2lsX2RmJFBTSSwgbXU9MTUwMClcblxuYGBgIn0= -->
-<pre class="r"><code>## Deliverable 3
+<pre class="{r}"><code>## Deliverable 3
 # Use t.test() to determine if the PSI across all manufacturing lots is statistically different from the pop mean of 1500 lbs per sq inch
-t.test(coil_df$PSI, mu=1500)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
-<pre><code>
-    One Sample t-test
+t.test(coil_df$PSI, mu=1500)</code></pre>
+<pre class="{r}"><code># Use t.test() to determine if the PSI for each manufacturing lot is statistically different from the pop mean of 1500 lbs per sq inch
 
-data:  coil_df$PSI
-t = -1.8931, df = 149, p-value = 0.06028
-alternative hypothesis: true mean is not equal to 1500
-95 percent confidence interval:
- 1497.507 1500.053
-sample estimates:
-mean of x 
-  1498.78 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QxXG50LnRlc3QoZGF0YT1sb3RfMSwgeD1sb3RfMSRQU0ksIG11PTE1MDApXG5cbmBgYCJ9 -->
-<pre class="r"><code># Lot1
-t.test(data=lot_1, x=lot_1$PSI, mu=1500)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBsb3RfMSRQU0lcbnQgPSAwLCBkZiA9IDQ5LCBwLXZhbHVlID0gMVxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5OS43MTkgMTUwMC4yODFcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gICAgIDE1MDAgXG4ifQ== -->
-<pre><code>
-    One Sample t-test
-
-data:  lot_1$PSI
-t = 0, df = 49, p-value = 1
-alternative hypothesis: true mean is not equal to 1500
-95 percent confidence interval:
- 1499.719 1500.281
-sample estimates:
-mean of x 
-     1500 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudC50ZXN0KGRhdGE9bG90XzIsIHg9bG90XzIkUFNJLCBtdT0xNTAwKVxuXG5gYGAifQ== -->
-<pre class="r"><code>t.test(data=lot_2, x=lot_2$PSI, mu=1500)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBsb3RfMiRQU0lcbnQgPSAwLjUxNzQ1LCBkZiA9IDQ5LCBwLXZhbHVlID0gMC42MDcyXG5hbHRlcm5hdGl2ZSBoeXBvdGhlc2lzOiB0cnVlIG1lYW4gaXMgbm90IGVxdWFsIHRvIDE1MDBcbjk1IHBlcmNlbnQgY29uZmlkZW5jZSBpbnRlcnZhbDpcbiAxNDk5LjQyMyAxNTAwLjk3N1xuc2FtcGxlIGVzdGltYXRlczpcbm1lYW4gb2YgeCBcbiAgIDE1MDAuMiBcbiJ9 -->
-<pre><code>
-    One Sample t-test
-
-data:  lot_2$PSI
-t = 0.51745, df = 49, p-value = 0.6072
-alternative hypothesis: true mean is not equal to 1500
-95 percent confidence interval:
- 1499.423 1500.977
-sample estimates:
-mean of x 
-   1500.2 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudC50ZXN0KGRhdGE9bG90XzMsIHg9bG90XzMkUFNJLCBtdT0xNTAwKVxuXG5gYGAifQ== -->
-<pre class="r"><code>t.test(data=lot_3, x=lot_3$PSI, mu=1500)
-</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBsb3RfMyRQU0lcbnQgPSAtMi4wOTE2LCBkZiA9IDQ5LCBwLXZhbHVlID0gMC4wNDE2OFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Mi40MzEgMTQ5OS44NDlcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTYuMTQgXG4ifQ== -->
-<pre><code>
-    One Sample t-test
-
-data:  lot_3$PSI
-t = -2.0916, df = 49, p-value = 0.04168
-alternative hypothesis: true mean is not equal to 1500
-95 percent confidence interval:
- 1492.431 1499.849
-sample estimates:
-mean of x 
-  1496.14 </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
+# Lot 1
+lot_1 = subset(coil_df, Manufacturing_Lot == &quot;Lot1&quot;)
+t.test(data=lot_1, x=lot_1$PSI, mu=1500)</code></pre>
+<pre class="{r}"><code># Lot 2
+lot_2 = subset(coil_df, Manufacturing_Lot == &quot;Lot2&quot;)
+t.test(data=lot_2, x=lot_2$PSI, mu=1500)</code></pre>
+<pre class="{r}"><code># Lot 3
+lot_3 = subset(coil_df, Manufacturing_Lot == &quot;Lot3&quot;)
+t.test(data=lot_3, x=lot_3$PSI, mu=1500)</code></pre>
 
 <div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiMgSW1wb3J0IGRlcGVuZGVuY2llcw0KbGlicmFyeShkcGx5cikNCmBgYA0KDQoNCmBgYHtyfQ0KIyMgRGVsaXZlcmFibGUgMQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIE1lY2hhQ2FyX21wZy5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KbXBnX2RmIDwtIHJlYWQuY3N2KCJSZXNvdXJjZXMvTWVjaGFDYXJfbXBnLmNzdiIpDQpgYGANCg0KDQpgYGB7cn0NCiMgUGVyZm9ybSBsaW5lYXIgcmVncmVzc2lvbiBvbiBhbGwgc2l4IHZhcmlhYmxlcyB3aXRoIHRoZSBkZiBhcyB0aGUgZGF0YSBwYXJhbWV0ZXINCmxtKG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YT1tcGdfZGYpDQpgYGANCmBgYHtyfQ0KIyBVc2UgdGhlIFN1bW1hcnkgZnVuY3Rpb24gdG8gZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZikpDQpgYGANCmBgYHtyfQ0KIyMgRGVsaWV2ZXJhYmxlIDINCiMgSW1wb3J0IGFuZCByZWFkIGluIHRoZSBTdXNwZW5zaW9uX0NvaWwuY3N2IGZpbGUgYXMgYSBkYXRhZnJhbWUNCmNvaWxfZGYgPC0gcmVhZC5jc3YoIlJlc291cmNlcy9TdXNwZW5zaW9uX0NvaWwuY3N2IikNCmBgYA0KDQpgYGB7cn0NCiMgQ3JlYXRlIGEgdG90YWxfc3VtYXJyeSBkYXRhZnJhbWUgdGhhdCBpbmNsdWRlcyBtZWFuLCBtZWRpYW4sIHZhcmlhbmNlLCBzdGFuZGFyZCBkZXZpYXRpb24gb2Ygc3VzcGVuc2lvbiBjb2lsJ3MgUFNJDQp0b3RhbF9zdW1tYXJ5IDwtIGNvaWxfZGYgJT4lIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSkNCg0KdG90YWxfc3VtbWFyeQ0KDQpgYGANCg0KDQpgYGB7cn0NCiMgQ3JlYXRlIGEgbG90X3N1bW1hcnkgZGYgdGhhdCBncm91cHMgZWFjaCBtYW51ZmFjdHVyaW5nIGxvdCBieSB0aGUgbWVhbiwgbWVkaWFuLCB2YXIsIGFuZCBzZCBvZiB0aGUgUFNJDQpsb3Rfc3VtbWFyeSA8LQ0KICBjb2lsX2RmICU+JSANCiAgICBncm91cF9ieShNYW51ZmFjdHVyaW5nX0xvdCkgJT4lDQogICAgICBzdW1tYXJpemUoTWVhbj1tZWFuKFBTSSksIE1lZGlhbj1tZWRpYW4oUFNJKSwgVmFyaWFuY2U9dmFyKFBTSSksIFNEPXNkKFBTSSkpDQoNCmxvdF9zdW1tYXJ5DQpgYGANCg0KDQpgYGB7cn0NCiMjIERlbGl2ZXJhYmxlIDMNCiMgVXNlIHQudGVzdCgpIHRvIGRldGVybWluZSBpZiB0aGUgUFNJIGFjcm9zcyBhbGwgbWFudWZhY3R1cmluZyBsb3RzIGlzIHN0YXRpc3RpY2FsbHkgZGlmZmVyZW50IGZyb20gdGhlIHBvcCBtZWFuIG9mIDE1MDAgbGJzIHBlciBzcSBpbmNoDQp0LnRlc3QoY29pbF9kZiRQU0ksIG11PTE1MDApDQpgYGANCg0KYGBge3J9DQojIFVzZSB0LnRlc3QoKSB0byBkZXRlcm1pbmUgaWYgdGhlIFBTSSBmb3IgZWFjaCBtYW51ZmFjdHVyaW5nIGxvdCBpcyBzdGF0aXN0aWNhbGx5IGRpZmZlcmVudCBmcm9tIHRoZSBwb3AgbWVhbiBvZiAxNTAwIGxicyBwZXIgc3EgaW5jaA0KDQojIExvdCAxDQpsb3RfMSA9IHN1YnNldChjb2lsX2RmLCBNYW51ZmFjdHVyaW5nX0xvdCA9PSAiTG90MSIpDQp0LnRlc3QoZGF0YT1sb3RfMSwgeD1sb3RfMSRQU0ksIG11PTE1MDApDQpgYGANCg0KDQpgYGB7cn0NCiMgTG90IDINCmxvdF8yID0gc3Vic2V0KGNvaWxfZGYsIE1hbnVmYWN0dXJpbmdfTG90ID09ICJMb3QyIikNCnQudGVzdChkYXRhPWxvdF8yLCB4PWxvdF8yJFBTSSwgbXU9MTUwMCkNCmBgYA0KDQpgYGB7cn0NCiMgTG90IDMNCmxvdF8zID0gc3Vic2V0KGNvaWxfZGYsIE1hbnVmYWN0dXJpbmdfTG90ID09ICJMb3QzIikNCnQudGVzdChkYXRhPWxvdF8zLCB4PWxvdF8zJFBTSSwgbXU9MTUwMCkNCmBgYA0KDQo=</div>
 
@@ -443,7 +300,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("MechaCarChallenge.Rmd");
+  window.initializeSourceEmbed("MechaCarChallenge.RScript");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
