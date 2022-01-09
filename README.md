@@ -28,7 +28,6 @@ However, when we look at the sample data divided by each Manufacturing Lot, we c
 ![](Resources/lot_summary.PNG)
 
 ## T-Tests on Suspension coils
-- briefly summarize your interpretation and findings for the t-test results. Include screenshots of the t-test to support your summary.
 
 If the p-value is below our significance level of 0.05% we can reject the null hypothesis (that there is no statistical difference between the observed sample mean and its presumed population mean).
 
