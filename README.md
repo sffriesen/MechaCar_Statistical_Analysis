@@ -1,6 +1,6 @@
 # MechaCar_Statistical_Analysis
 
-This analysis uses mpg test results and suspension coil data to determine whether...
+This analysis uses mpg test results and suspension coil data to analyze MechaCars' vehicle performance and manufacturing consistency.
 
 ## Linear Regression to Predict MPG
 
@@ -27,15 +27,35 @@ However, when we look at the sample data divided by each Manufacturing Lot, we c
 
 ![](Resources/lot_summary.PNG)
 
-
-
 ## T-Tests on Suspension coils
 - briefly summarize your interpretation and findings for the t-test results. Include screenshots of the t-test to support your summary.
 
+If the p-value is below our significance level of 0.05% we can reject the null hypothesis (that there is no statistical difference between the observed sample mean and its presumed population mean).
+
+In our t-test of the total sample population, our p-value ended up being 0.06. This is not enough to reject the null hypothesis, so we can assume that it holds true here.
+
+![](Resources/total_ttest.PNG)
+
+For the Lot 1 t-test, the p-value was 1. Since this was also greater than the 0.05% significance level, we can not reject the null hypothesis for Lot 1 values.
+
+![](Resources/lot1_ttest.PNG)
+
+Similarly, for Lot 2, the p-value is 0.61. Again, not enough to reject the null hypothesis.
+
+![](Resources/lot2_ttest.PNG)
+
+Alternatively, for Lot 3, our p-value was 0.04. This is enough to reject the null hypothesis.
+
+![](Resources/lot3_ttest.PNG)
+
+All in all, all populations excluding the Lot 3 sample, proved to have no statistical difference between the sample mean and population mean. Lot 3 proved there is a statistical difference between the two.
+
 
 ## Study Design: MechaCar vs. Competition
-- Write a short description of a statistical study that can quantify how the MechaCar performs against the competition. In your study design, think critically about what metrics would be of interest to a consumer: for a few examples, cost, city or highway fuel efficiency, horse power, maintenance cost, or safety rating.
-  - What metric or metrics are you going to test?
-  - What is the null hypothesis or alternative hypothesis?
-  - What statistical test would you use to test the hypothesis? And why?
-  - What data is needed to run the statistical test?
+Another statistical study that could interest consumers, would be how MechaCars vehicles have improved their safety ratings as the years go by, compared to the company's competitors.
+
+This study would be proving one of the following hypotheses:
+  - Null Hypothesis: There is no statistical relationship between safety rating and year of vehicle production.
+  - Alternative Hypothesis: There is a statistical relationship between safety rating and year of vehicle production.
+
+To conduct this study, a linear regression model could be conducted, using safety rating data for MechaCars' vehicles and competitor vehicles over the last 20 years (for example). A linear regression model would show if there is a positive or negative correlation to whether vehicles are becoming safer or not. Alternatively, there could be no clear correlation. Benefits of the linear regression model include being able to produce a graph (something most consumers would be able to understand), as well including a p-value and r-squared value. These two values can be used to better understand how representative the linear regression model is of the whole dataset.
