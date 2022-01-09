@@ -309,8 +309,9 @@ lot_summary</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBVc2UgdC50ZXN0KCkgdG8gZGV0ZXJtaW5lIGlmIHRoZSBQU0kgYWNyb3NzIGFsbCBtYW51ZmFjdHVyaW5nIGxvdHMgaXMgc3RhdGlzdGljYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcG9wIG1lYW4gb2YgMTUwMCBsYnMgcGVyIHNxIGluY2hcbnQudGVzdChjb2lsX2RmJFBTSSwgbXU9MTUwMClcblxuYGBgIn0= -->
-<pre class="r"><code># Use t.test() to determine if the PSI across all manufacturing lots is statistically different from the pop mean of 1500 lbs per sq inch
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgRGVsaXZlcmFibGUgM1xuIyBVc2UgdC50ZXN0KCkgdG8gZGV0ZXJtaW5lIGlmIHRoZSBQU0kgYWNyb3NzIGFsbCBtYW51ZmFjdHVyaW5nIGxvdHMgaXMgc3RhdGlzdGljYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcG9wIG1lYW4gb2YgMTUwMCBsYnMgcGVyIHNxIGluY2hcbnQudGVzdChjb2lsX2RmJFBTSSwgbXU9MTUwMClcblxuYGBgIn0= -->
+<pre class="r"><code>## Deliverable 3
+# Use t.test() to determine if the PSI across all manufacturing lots is statistically different from the pop mean of 1500 lbs per sq inch
 t.test(coil_df$PSI, mu=1500)
 </code></pre>
 <!-- rnb-source-end -->
@@ -331,73 +332,71 @@ mean of x
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QxXG50LnRlc3QoZGF0YT1jb2lsX2RmLCB4PWNvaWxfZGYkUFNJLCBzdWJzZXQ9KE1hbnVmYWN0dXJpbmdfTG90ID09IFwiTG90MVwiKSwgbXU9MTUwMClcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QxXG50LnRlc3QoZGF0YT1sb3RfMSwgeD1sb3RfMSRQU0ksIG11PTE1MDApXG5cbmBgYCJ9 -->
 <pre class="r"><code># Lot1
-t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == &quot;Lot1&quot;), mu=1500)
+t.test(data=lot_1, x=lot_1$PSI, mu=1500)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBsb3RfMSRQU0lcbnQgPSAwLCBkZiA9IDQ5LCBwLXZhbHVlID0gMVxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5OS43MTkgMTUwMC4yODFcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gICAgIDE1MDAgXG4ifQ== -->
 <pre><code>
     One Sample t-test
 
-data:  coil_df$PSI
-t = -1.8931, df = 149, p-value = 0.06028
+data:  lot_1$PSI
+t = 0, df = 49, p-value = 1
 alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
- 1497.507 1500.053
+ 1499.719 1500.281
 sample estimates:
 mean of x 
-  1498.78 </code></pre>
+     1500 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QyXG50LnRlc3QoZGF0YT1jb2lsX2RmLCB4PWNvaWxfZGYkUFNJLCBzdWJzZXQ9KE1hbnVmYWN0dXJpbmdfTG90ID09IFwiTG90MlwiKSwgbXU9MTUwMClcblxuYGBgIn0= -->
-<pre class="r"><code># Lot2
-t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == &quot;Lot2&quot;), mu=1500)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudC50ZXN0KGRhdGE9bG90XzIsIHg9bG90XzIkUFNJLCBtdT0xNTAwKVxuXG5gYGAifQ== -->
+<pre class="r"><code>t.test(data=lot_2, x=lot_2$PSI, mu=1500)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBsb3RfMiRQU0lcbnQgPSAwLjUxNzQ1LCBkZiA9IDQ5LCBwLXZhbHVlID0gMC42MDcyXG5hbHRlcm5hdGl2ZSBoeXBvdGhlc2lzOiB0cnVlIG1lYW4gaXMgbm90IGVxdWFsIHRvIDE1MDBcbjk1IHBlcmNlbnQgY29uZmlkZW5jZSBpbnRlcnZhbDpcbiAxNDk5LjQyMyAxNTAwLjk3N1xuc2FtcGxlIGVzdGltYXRlczpcbm1lYW4gb2YgeCBcbiAgIDE1MDAuMiBcbiJ9 -->
 <pre><code>
     One Sample t-test
 
-data:  coil_df$PSI
-t = -1.8931, df = 149, p-value = 0.06028
+data:  lot_2$PSI
+t = 0.51745, df = 49, p-value = 0.6072
 alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
- 1497.507 1500.053
+ 1499.423 1500.977
 sample estimates:
 mean of x 
-  1498.78 </code></pre>
+   1500.2 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBMb3QzXG50LnRlc3QoZGF0YT1jb2lsX2RmLCB4PWNvaWxfZGYkUFNJLCBzdWJzZXQ9KE1hbnVmYWN0dXJpbmdfTG90ID09IFwiTG90M1wiKSwgbXU9MTUwMClcblxuYGBgIn0= -->
-<pre class="r"><code># Lot3
-t.test(data=coil_df, x=coil_df$PSI, subset=(Manufacturing_Lot == &quot;Lot3&quot;), mu=1500)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudC50ZXN0KGRhdGE9bG90XzMsIHg9bG90XzMkUFNJLCBtdT0xNTAwKVxuXG5gYGAifQ== -->
+<pre class="r"><code>t.test(data=lot_3, x=lot_3$PSI, mu=1500)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBjb2lsX2RmJFBTSVxudCA9IC0xLjg5MzEsIGRmID0gMTQ5LCBwLXZhbHVlID0gMC4wNjAyOFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Ny41MDcgMTUwMC4wNTNcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTguNzggXG4ifQ== -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5cdE9uZSBTYW1wbGUgdC10ZXN0XG5cbmRhdGE6ICBsb3RfMyRQU0lcbnQgPSAtMi4wOTE2LCBkZiA9IDQ5LCBwLXZhbHVlID0gMC4wNDE2OFxuYWx0ZXJuYXRpdmUgaHlwb3RoZXNpczogdHJ1ZSBtZWFuIGlzIG5vdCBlcXVhbCB0byAxNTAwXG45NSBwZXJjZW50IGNvbmZpZGVuY2UgaW50ZXJ2YWw6XG4gMTQ5Mi40MzEgMTQ5OS44NDlcbnNhbXBsZSBlc3RpbWF0ZXM6XG5tZWFuIG9mIHggXG4gIDE0OTYuMTQgXG4ifQ== -->
 <pre><code>
     One Sample t-test
 
-data:  coil_df$PSI
-t = -1.8931, df = 149, p-value = 0.06028
+data:  lot_3$PSI
+t = -2.0916, df = 49, p-value = 0.04168
 alternative hypothesis: true mean is not equal to 1500
 95 percent confidence interval:
- 1497.507 1500.053
+ 1492.431 1499.849
 sample estimates:
 mean of x 
-  1498.78 </code></pre>
+  1496.14 </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiMgSW1wb3J0IGRlcGVuZGVuY2llcw0KbGlicmFyeShkcGx5cikNCmBgYA0KDQoNCmBgYHtyfQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIE1lY2hhQ2FyX21wZy5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KbXBnX2RmIDwtIHJlYWQuY3N2KCJSZXNvdXJjZXMvTWVjaGFDYXJfbXBnLmNzdiIpDQpgYGANCg0KDQpgYGB7cn0NCiMgUGVyZm9ybSBsaW5lYXIgcmVncmVzc2lvbiBvbiBhbGwgc2l4IHZhcmlhYmxlcyB3aXRoIHRoZSBkZiBhcyB0aGUgZGF0YSBwYXJhbWV0ZXINCmxtKG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YT1tcGdfZGYpDQpgYGANCmBgYHtyfQ0KIyBVc2UgdGhlIFN1bW1hcnkgZnVuY3Rpb24gdG8gZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZikpDQpgYGANCmBgYHtyfQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIFN1c3BlbnNpb25fQ29pbC5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KY29pbF9kZiA8LSByZWFkLmNzdigiUmVzb3VyY2VzL1N1c3BlbnNpb25fQ29pbC5jc3YiKQ0KYGBgDQoNCmBgYHtyfQ0KIyBDcmVhdGUgYSB0b3RhbF9zdW1hcnJ5IGRhdGFmcmFtZSB0aGF0IGluY2x1ZGVzIG1lYW4sIG1lZGlhbiwgdmFyaWFuY2UsIHN0YW5kYXJkIGRldmlhdGlvbiBvZiBzdXNwZW5zaW9uIGNvaWwncyBQU0kNCnRvdGFsX3N1bW1hcnkgPC0gY29pbF9kZiAlPiUgc3VtbWFyaXplKE1lYW49bWVhbihQU0kpLCBNZWRpYW49bWVkaWFuKFBTSSksIFZhcmlhbmNlPXZhcihQU0kpLCBTRD1zZChQU0kpKQ0KDQp0b3RhbF9zdW1tYXJ5DQoNCmBgYA0KDQoNCmBgYHtyfQ0KIyBDcmVhdGUgYSBsb3Rfc3VtbWFyeSBkZiB0aGF0IGdyb3VwcyBlYWNoIG1hbnVmYWN0dXJpbmcgbG90IGJ5IHRoZSBtZWFuLCBtZWRpYW4sIHZhciwgYW5kIHNkIG9mIHRoZSBQU0kNCmxvdF9zdW1tYXJ5IDwtDQogIGNvaWxfZGYgJT4lIA0KICAgIGdyb3VwX2J5KE1hbnVmYWN0dXJpbmdfTG90KSAlPiUNCiAgICAgIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSkNCg0KbG90X3N1bW1hcnkNCmBgYA0KDQoNCmBgYHtyfQ0KIyBVc2UgdC50ZXN0KCkgdG8gZGV0ZXJtaW5lIGlmIHRoZSBQU0kgYWNyb3NzIGFsbCBtYW51ZmFjdHVyaW5nIGxvdHMgaXMgc3RhdGlzdGljYWxseSBkaWZmZXJlbnQgZnJvbSB0aGUgcG9wIG1lYW4gb2YgMTUwMCBsYnMgcGVyIHNxIGluY2gNCnQudGVzdChjb2lsX2RmJFBTSSwgbXU9MTUwMCkNCmBgYA0KDQpgYGB7cn0NCiMgVXNlIHQudGVzdCgpIHRvIGRldGVybWluZSBpZiB0aGUgUFNJIGZvciBlYWNoIG1hbnVmYWN0dXJpbmcgbG90IGlzIHN0YXRpc3RpY2FsbHkgZGlmZmVyZW50IGZyb20gdGhlIHBvcCBtZWFuIG9mIDE1MDAgbGJzIHBlciBzcSBpbmNoDQoNCiMgTG90MQ0KdC50ZXN0KGRhdGE9Y29pbF9kZiwgeD1jb2lsX2RmJFBTSSwgc3Vic2V0PShNYW51ZmFjdHVyaW5nX0xvdCA9PSAiTG90MSIpLCBtdT0xNTAwKQ0KYGBgDQoNCg0KYGBge3J9DQojIExvdDINCnQudGVzdChkYXRhPWNvaWxfZGYsIHg9Y29pbF9kZiRQU0ksIHN1YnNldD0oTWFudWZhY3R1cmluZ19Mb3QgPT0gIkxvdDIiKSwgbXU9MTUwMCkNCmBgYA0KDQpgYGB7cn0NCiMgTG90Mw0KdC50ZXN0KGRhdGE9Y29pbF9kZiwgeD1jb2lsX2RmJFBTSSwgc3Vic2V0PShNYW51ZmFjdHVyaW5nX0xvdCA9PSAiTG90MyIpLCBtdT0xNTAwKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQpgYGB7cn0NCiMgSW1wb3J0IGRlcGVuZGVuY2llcw0KbGlicmFyeShkcGx5cikNCmBgYA0KDQoNCmBgYHtyfQ0KIyMgRGVsaXZlcmFibGUgMQ0KIyBJbXBvcnQgYW5kIHJlYWQgaW4gdGhlIE1lY2hhQ2FyX21wZy5jc3YgZmlsZSBhcyBhIGRhdGFmcmFtZQ0KbXBnX2RmIDwtIHJlYWQuY3N2KCJSZXNvdXJjZXMvTWVjaGFDYXJfbXBnLmNzdiIpDQpgYGANCg0KDQpgYGB7cn0NCiMgUGVyZm9ybSBsaW5lYXIgcmVncmVzc2lvbiBvbiBhbGwgc2l4IHZhcmlhYmxlcyB3aXRoIHRoZSBkZiBhcyB0aGUgZGF0YSBwYXJhbWV0ZXINCmxtKG1wZyB+IHZlaGljbGVfbGVuZ3RoICsgdmVoaWNsZV93ZWlnaHQgKyBzcG9pbGVyX2FuZ2xlICsgZ3JvdW5kX2NsZWFyYW5jZSArIEFXRCwgZGF0YT1tcGdfZGYpDQpgYGANCmBgYHtyfQ0KIyBVc2UgdGhlIFN1bW1hcnkgZnVuY3Rpb24gdG8gZGV0ZXJtaW5lIHRoZSBwLXZhbHVlIGFuZCB0aGUgci1zcXVhcmVkIHZhbHVlIGZvciB0aGUgbGluZWFyIHJlZ3Jlc3Npb24gbW9kZWwNCnN1bW1hcnkobG0obXBnIH4gdmVoaWNsZV9sZW5ndGggKyB2ZWhpY2xlX3dlaWdodCArIHNwb2lsZXJfYW5nbGUgKyBncm91bmRfY2xlYXJhbmNlICsgQVdELCBkYXRhPW1wZ19kZikpDQpgYGANCmBgYHtyfQ0KIyMgRGVsaWV2ZXJhYmxlIDINCiMgSW1wb3J0IGFuZCByZWFkIGluIHRoZSBTdXNwZW5zaW9uX0NvaWwuY3N2IGZpbGUgYXMgYSBkYXRhZnJhbWUNCmNvaWxfZGYgPC0gcmVhZC5jc3YoIlJlc291cmNlcy9TdXNwZW5zaW9uX0NvaWwuY3N2IikNCmBgYA0KDQpgYGB7cn0NCiMgQ3JlYXRlIGEgdG90YWxfc3VtYXJyeSBkYXRhZnJhbWUgdGhhdCBpbmNsdWRlcyBtZWFuLCBtZWRpYW4sIHZhcmlhbmNlLCBzdGFuZGFyZCBkZXZpYXRpb24gb2Ygc3VzcGVuc2lvbiBjb2lsJ3MgUFNJDQp0b3RhbF9zdW1tYXJ5IDwtIGNvaWxfZGYgJT4lIHN1bW1hcml6ZShNZWFuPW1lYW4oUFNJKSwgTWVkaWFuPW1lZGlhbihQU0kpLCBWYXJpYW5jZT12YXIoUFNJKSwgU0Q9c2QoUFNJKSkNCg0KdG90YWxfc3VtbWFyeQ0KDQpgYGANCg0KDQpgYGB7cn0NCiMgQ3JlYXRlIGEgbG90X3N1bW1hcnkgZGYgdGhhdCBncm91cHMgZWFjaCBtYW51ZmFjdHVyaW5nIGxvdCBieSB0aGUgbWVhbiwgbWVkaWFuLCB2YXIsIGFuZCBzZCBvZiB0aGUgUFNJDQpsb3Rfc3VtbWFyeSA8LQ0KICBjb2lsX2RmICU+JSANCiAgICBncm91cF9ieShNYW51ZmFjdHVyaW5nX0xvdCkgJT4lDQogICAgICBzdW1tYXJpemUoTWVhbj1tZWFuKFBTSSksIE1lZGlhbj1tZWRpYW4oUFNJKSwgVmFyaWFuY2U9dmFyKFBTSSksIFNEPXNkKFBTSSkpDQoNCmxvdF9zdW1tYXJ5DQpgYGANCg0KDQpgYGB7cn0NCiMjIERlbGl2ZXJhYmxlIDMNCiMgVXNlIHQudGVzdCgpIHRvIGRldGVybWluZSBpZiB0aGUgUFNJIGFjcm9zcyBhbGwgbWFudWZhY3R1cmluZyBsb3RzIGlzIHN0YXRpc3RpY2FsbHkgZGlmZmVyZW50IGZyb20gdGhlIHBvcCBtZWFuIG9mIDE1MDAgbGJzIHBlciBzcSBpbmNoDQp0LnRlc3QoY29pbF9kZiRQU0ksIG11PTE1MDApDQpgYGANCg0KYGBge3J9DQojIFVzZSB0LnRlc3QoKSB0byBkZXRlcm1pbmUgaWYgdGhlIFBTSSBmb3IgZWFjaCBtYW51ZmFjdHVyaW5nIGxvdCBpcyBzdGF0aXN0aWNhbGx5IGRpZmZlcmVudCBmcm9tIHRoZSBwb3AgbWVhbiBvZiAxNTAwIGxicyBwZXIgc3EgaW5jaA0KDQojIExvdCAxDQpsb3RfMSA9IHN1YnNldChjb2lsX2RmLCBNYW51ZmFjdHVyaW5nX0xvdCA9PSAiTG90MSIpDQp0LnRlc3QoZGF0YT1sb3RfMSwgeD1sb3RfMSRQU0ksIG11PTE1MDApDQpgYGANCg0KDQpgYGB7cn0NCiMgTG90IDINCmxvdF8yID0gc3Vic2V0KGNvaWxfZGYsIE1hbnVmYWN0dXJpbmdfTG90ID09ICJMb3QyIikNCnQudGVzdChkYXRhPWxvdF8yLCB4PWxvdF8yJFBTSSwgbXU9MTUwMCkNCmBgYA0KDQpgYGB7cn0NCiMgTG90IDMNCmxvdF8zID0gc3Vic2V0KGNvaWxfZGYsIE1hbnVmYWN0dXJpbmdfTG90ID09ICJMb3QzIikNCnQudGVzdChkYXRhPWxvdF8zLCB4PWxvdF8zJFBTSSwgbXU9MTUwMCkNCmBgYA0KDQo=</div>
 
 
 
